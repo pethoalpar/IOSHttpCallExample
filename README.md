@@ -30,15 +30,11 @@ let postString = "Post body"
 request.httpBody = postString?.data(using: .utf8)
 let task = URLSession.shared.dataTask(with: request) { data, response, error in
     guard let data = data, error == nil else {
-      DispatchQueue.main.async {
-         self.answerField.text = error! as? String
-      }
+      //on error
       return
     }
     if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-      DispatchQueue.main.async {
-         self.answerField.text = String(httpStatus.statusCode)
-      }
+      // status not 200
       return
     }
     DispatchQueue.main.async {
@@ -58,15 +54,11 @@ let postString = "Put body"
 request.httpBody = postString?.data(using: .utf8)
 let task = URLSession.shared.dataTask(with: request) { data, response, error in
     guard let data = data, error == nil else {
-      DispatchQueue.main.async {
-         self.answerField.text = error! as? String
-      }
+      //on error
       return
     }
     if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-      DispatchQueue.main.async {
-         self.answerField.text = String(httpStatus.statusCode)
-      }
+      // status not 200
       return
     }
     DispatchQueue.main.async {
