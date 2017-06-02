@@ -24,7 +24,7 @@ task.resume()
 <h2>POST</h2>
 
 ```swift
-var request = URLRequest(url: URL(string: ".0.0.0.0")!)
+var request = URLRequest(url: URL(string: "0.0.0.0")!)
 request.httpMethod = "POST"
 let postString = "Post body"
 request.httpBody = postString?.data(using: .utf8)
@@ -48,7 +48,7 @@ task.resume()
 <h2>PUT</h2>
 
 ```swift
-var request = URLRequest(url: URL(string: ".0.0.0.0")!)
+var request = URLRequest(url: URL(string: "0.0.0.0")!)
 request.httpMethod = "PUT"
 let postString = "Put body"
 request.httpBody = postString?.data(using: .utf8)
